@@ -5,6 +5,7 @@ metrics:
 plots:
 - dvclive/plots/metrics:
     x: step
+- dvclive/plots/images
 artifacts:
   pr1:
     path: models/model.pt
