@@ -10,6 +10,9 @@ def dvc_test():
             for metric_name, value in {"val": 2, "tra": 1}.items():
                 live.log_metric(metric_name, value * random.randint(0,200))
                 live.next_step()
+        import numpy as np
+        img_numpy = np.ones((500, 500), np.uint8) * 255
+        live.log_image("numpy.png", img_numpy)
         live.log_artifact("./models/model.pt",
                           type="model",
                           name="pr1",
