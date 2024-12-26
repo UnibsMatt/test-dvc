@@ -10,7 +10,11 @@ def dvc_test():
             for metric_name, value in {"val": 2, "tra": 1}.items():
                 live.log_metric(metric_name, value * random.randint(0,200))
                 live.next_step()
-        live.log_artifact("./models/model.pt", type="model", name="pr1", desc="Fine-tuned Resnet50",
-      labels=["resnet", "imagenet"],)
+        live.log_artifact("./models/model.pt",
+                          type="model",
+                          name="pr1",
+                          desc="Fine-tuned Resnet50",
+                          labels=["resnet", "imagenet"],)
+        live.make_report()
 if __name__ == '__main__':
     dvc_test()
